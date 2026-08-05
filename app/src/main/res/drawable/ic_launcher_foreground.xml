@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- Anel externo (contorno de "ajuste") -->
+    <path
+        android:fillColor="#4A6572"
+        android:pathData="M54,24 A30,30 0 1 0 54,84 A30,30 0 1 0 54,24 Z" />
+
+    <!-- Meia-lua (lado escuro = modo noturno) -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M54,26 A28,28 0 1 0 54,82 A28,28 0 1 0 54,26 Z" />
+
+    <!-- Mordida da lua (crescente) -->
+    <path
+        android:fillColor="#33454F"
+        android:pathData="M54,26 A28,28 0 1 0 54,82 L58,82 A30,30 0 1 1 58,26 Z" />
+
+    <!-- Sol (lado claro) - raios -->
+    <path
+        android:fillColor="#FFD54F"
+        android:pathData="M68,30 L71,26 L74,30 L78,27 L78,32 L82,33 L79,37 L82,40 L77,42 L77,47 L73,45 L70,49 L68,45 L63,47 L63,42 L58,42 L61,38 L58,34 L63,32 Z" />
+
+    <!-- Barra de ajuste (slider) na base -->
+    <path
+        android:fillColor="#4A6572"
+        android:pathData="M36,88 L72,88 L72,92 L36,92 Z" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M36,88 L58,88 L58,92 L36,92 Z" />
+</vector>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Dim Screen</string>
+    <string name="title_subtitle">Reduz o brilho da tela com uma camada por cima.</string>
+    <string name="switch_label">Diminuir brilho</string>
+    <string name="button_apply">Aplicar</string>
+    <string name="percent_format">%1$d%%</string>
+    <string name="overlay_permission_title">Permissão necessária</string>
+    <string name="overlay_permission_message">Para reduzir o brilho, permita que este app desenhe sobre outros apps.\n\nNa próxima tela:\n1. Selecione o DimScreen na lista\n2. Ative a opção \'Exibir sobre outros apps\' / \'Mostrar sobre outros apps\'</string>
+    <string name="overlay_permission_continue">Continuar</string>
+    <string name="overlay_permission_later">Agora não</string>
+    <string name="notification_channel_name">Redução de brilho</string>
+    <string name="notification_channel_description">Mantém a redução de brilho ativa</string>
+    <string name="notification_title">Dim Screen ativo</string>
+    <string name="notification_text">O brilho da tela está reduzido</string>
+</resources>

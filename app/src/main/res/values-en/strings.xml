@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Dim Screen</string>
+    <string name="title_subtitle">Reduces screen brightness with a layer on top.</string>
+    <string name="switch_label">Dim brightness</string>
+    <string name="button_apply">Apply</string>
+    <string name="percent_format">%1$d%%</string>
+    <string name="overlay_permission_title">Permission required</string>
+    <string name="overlay_permission_message">To reduce brightness, allow this app to draw over other apps.\n\nOn the next screen:\n1. Select DimScreen from the list\n2. Enable \'Display over other apps\'</string>
+    <string name="overlay_permission_continue">Continue</string>
+    <string name="overlay_permission_later">Not now</string>
+    <string name="notification_channel_name">Brightness reduction</string>
+    <string name="notification_channel_description">Keeps the brightness reduction active</string>
+    <string name="notification_title">Dim Screen active</string>
+    <string name="notification_text">Screen brightness is reduced</string>
+</resources>
