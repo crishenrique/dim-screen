@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DimScreen — Screen Dimmer</title>
+<style>
+  :root {
+    --slate-900: #2C3B44;
+    --slate-800: #33454F;
+    --slate-700: #4A6572;
+    --slate-500: #5F7D8B;
+    --slate-200: #E1E8EC;
+    --slate-100: #F1F5F7;
+    --white: #FFFFFF;
+    --amber: #FFD54F;
+    --radius: 16px;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+    background: var(--slate-100);
+    color: var(--slate-900);
+    line-height: 1.6;
+  }
+  a { color: var(--slate-700); }
+
+  /* Hero */
+  .hero {
+    background: linear-gradient(135deg, var(--slate-900), var(--slate-700));
+    color: var(--white);
+    padding: 72px 24px 64px;
+    text-align: center;
+  }
+  .hero-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 88px;
+    height: 88px;
+    border-radius: 24px;
+    background: rgba(255,255,255,0.08);
+    border: 2px solid rgba(255,255,255,0.25);
+    margin-bottom: 20px;
+  }
+  .hero-icon svg { width: 48px; height: 48px; }
+  .hero h1 { font-size: 44px; font-weight: 700; letter-spacing: -0.5px; }
+  .hero p.tagline {
+    margin-top: 10px;
+    font-size: 19px;
+    color: var(--slate-200);
+    max-width: 620px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hero .badges {
+    margin-top: 24px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .badge {
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 999px;
+    padding: 6px 16px;
+    font-size: 14px;
+  }
+  .btn {
+    display: inline-block;
+    margin-top: 32px;
+    padding: 14px 36px;
+    border-radius: 12px;
+    background: var(--amber);
+    color: #4A3B00;
+    font-weight: 600;
+    font-size: 17px;
+    text-decoration: none;
+    transition: transform 0.15s ease;
+  }
+  .btn:hover { transform: translateY(-2px); }
+
+  /* Container */
+  .container { max-width: 880px; margin: 0 auto; padding: 0 24px; }
+  section { padding: 56px 0 0; }
+
+  h2 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: var(--slate-700);
+  }
+
+  /* Cards de features */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+  }
+  .card {
+    background: var(--white);
+    border: 1px solid var(--slate-200);
+    border-radius: var(--radius);
+    padding: 22px;
+  }
+  .card .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--slate-700);
+    margin-bottom: 12px;
+  }
+  .card h3 { font-size: 17px; margin-bottom: 6px; }
+  .card p { font-size: 14px; color: #55606A; }
+
+  /* Passos */
+  ol.steps { list-style: none; counter-reset: step; }
+  ol.steps li {
+    counter-increment: step;
+    background: var(--white);
+    border: 1px solid var(--slate-200);
+    border-radius: var(--radius);
+    padding: 18px 22px 18px 64px;
+    margin-bottom: 12px;
+    position: relative;
+    font-size: 15px;
+  }
+  ol.steps li::before {
+    content: counter(step);
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: var(--slate-700);
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 15px;
+  }
+
+  /* Stack */
+  .stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .chip {
+    background: var(--white);
+    border: 1px solid var(--slate-200);
+    border-radius: 8px;
+    padding: 8px 14px;
+    font-size: 14px;
+  }
+
+  /* Nota */
+  .note {
+    background: var(--slate-200);
+    border-left: 4px solid var(--slate-700);
+    border-radius: 8px;
+    padding: 16px 20px;
+    font-size: 14px;
+    margin-top: 28px;
+  }
+  code {
+    background: var(--slate-200);
+    border-radius: 5px;
+    padding: 2px 7px;
+    font-size: 13px;
+    font-family: Consolas, monospace;
+  }
+
+  footer {
+    margin-top: 64px;
+    background: var(--slate-900);
+    color: var(--slate-200);
+    text-align: center;
+    padding: 28px 24px;
+    font-size: 14px;
+  }
+  footer a { color: var(--amber); text-decoration: none; }
+</style>
+</head>
+<body>
+
+  <header class="hero">
+    <div class="hero-icon">
+      <!-- Lua + slider -->
+      <svg viewBox="0 0 48 48" fill="none">
+        <circle cx="24" cy="24" r="17" stroke="#FFFFFF" stroke-width="2.5" fill="none"/>
+        <path d="M24 12 A12 12 0 1 0 24 36 L26.5 36 A13 13 0 1 1 26.5 12 Z" fill="#FFD54F"/>
+        <line x1="12" y1="41" x2="36" y2="41" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <h1>DimScreen</h1>
+    <p class="tagline">Reduz o brilho da tela além do mínimo do sistema, com uma camada de escurecimento sobre todos os apps.</p>
+    <div class="badges">
+      <span class="badge">Grátis</span>
+      <span class="badge">Sem anúncios</span>
+      <span class="badge">Sem internet</span>
+      <span class="badge">Android 6.0+</span>
+    </div>
+    <div>
+      <a class="btn" href="https://github.com/crishenrique/dim-screen/releases" target="_blank" rel="noopener">Baixar APK</a>
+    </div>
+  </header>
+
+  <div class="container">
+
+    <section>
+      <h2>Funcionalidades</h2>
+      <div class="grid">
+        <div class="card"><div class="dot"></div><h3>Escurece tudo</h3><p>Camada de escurecimento sobre qualquer app, usando a permissão de sobreposição do Android.</p></div>
+        <div class="card"><div class="dot"></div><h3>Controle total</h3><p>Intensidade de 0% a 100% com aplicação em tempo real, via slider.</p></div>
+        <div class="card"><div class="dot"></div><h3>Continua ativo</h3><p>Serviço em primeiro plano com notificação — o sistema não mata o processo.</p></div>
+        <div class="card"><div class="dot"></div><h3>Reativa após reiniciar</h3><p>Se o escurecimento estava ativo, ele volta sozinho depois do boot.</p></div>
+        <div class="card"><div class="dot"></div><h3>Privacidade total</h3><p>Nenhuma permissão de internet. Nenhum dado é coletado ou enviado.</p></div>
+        <div class="card"><div class="dot"></div><h3>Leve</h3><p>Feito com Kotlin e Material Design 3. Sem bloatware, roda leve em qualquer aparelho.</p></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Instalação</h2>
+      <ol class="steps">
+        <li>Baixe o APK na página <strong>Releases</strong> do GitHub.</li>
+        <li>Permita "fontes desconhecidas" quando o Android solicitar.</li>
+        <li>Abra o DimScreen e ative o escurecimento.</li>
+      </ol>
+      <div class="note">
+        <strong>Permissões necessárias (uma vez):</strong> "Exibir sobre outros apps" (pedida ao ativar o escurecimento pela primeira vez) e "Notificações" no Android 13+ (mantém o serviço ativo).
+      </div>
+    </section>
+
+    <section>
+      <h2>Como funciona</h2>
+      <p>O app desenha uma view preta semi-transparente sobre a tela inteira, com opacidade conforme o slider. A janela é mantida por um serviço em primeiro plano (<code>DimService</code>) com notificação persistente, e um <code>BootReceiver</code> reativa o escurecimento após o boot quando o usuário deixou ativado.</p>
+    </section>
+
+    <section>
+      <h2>Stack</h2>
+      <div class="stack">
+        <span class="chip">Kotlin 1.9.24</span>
+        <span class="chip">Android Views + Material 3</span>
+        <span class="chip">MVVM (ViewModel + StateFlow + Repository)</span>
+        <span class="chip">Gradle 8.7 / AGP 8.5.2</span>
+        <span class="chip">minSdk 24 · targetSdk 34</span>
+      </div>
+    </section>
+
+  </div>
+
+  <footer>
+    DimScreen · Código aberto sob licença MIT · <a href="https://github.com/crishenrique/dim-screen" target="_blank" rel="noopener">github.com/crishenrique/dim-screen</a>
+  </footer>
+
+</body>
+</html>
