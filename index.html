@@ -67,20 +67,6 @@
     padding: 6px 16px;
     font-size: 14px;
   }
-  .btn {
-    display: inline-block;
-    margin-top: 32px;
-    padding: 14px 36px;
-    border-radius: 12px;
-    background: var(--amber);
-    color: #4A3B00;
-    font-weight: 600;
-    font-size: 17px;
-    text-decoration: none;
-    transition: transform 0.15s ease;
-  }
-  .btn:hover { transform: translateY(-2px); }
-
   /* Container */
   .container { max-width: 880px; margin: 0 auto; padding: 0 24px; }
   section { padding: 56px 0 0; }
@@ -144,20 +130,6 @@
     font-size: 15px;
   }
 
-  /* Stack */
-  .stack {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-  }
-  .chip {
-    background: var(--white);
-    border: 1px solid var(--slate-200);
-    border-radius: 8px;
-    padding: 8px 14px;
-    font-size: 14px;
-  }
-
   /* Nota */
   .note {
     background: var(--slate-200);
@@ -205,9 +177,6 @@
       <span class="badge">Sem internet</span>
       <span class="badge">Android 6.0+</span>
     </div>
-    <div>
-      <a class="btn" href="https://github.com/crishenrique/dim-screen/releases" target="_blank" rel="noopener">Baixar APK</a>
-    </div>
   </header>
 
   <div class="container">
@@ -239,17 +208,6 @@
     <section>
       <h2>Como funciona</h2>
       <p>O app desenha uma view preta semi-transparente sobre a tela inteira, com opacidade conforme o slider. A janela é mantida por um serviço em primeiro plano (<code>DimService</code>) com notificação persistente, e um <code>BootReceiver</code> reativa o escurecimento após o boot quando o usuário deixou ativado.</p>
-    </section>
-
-    <section>
-      <h2>Stack</h2>
-      <div class="stack">
-        <span class="chip">Kotlin 1.9.24</span>
-        <span class="chip">Android Views + Material 3</span>
-        <span class="chip">MVVM (ViewModel + StateFlow + Repository)</span>
-        <span class="chip">Gradle 8.7 / AGP 8.5.2</span>
-        <span class="chip">minSdk 24 · targetSdk 34</span>
-      </div>
     </section>
 
   </div>
